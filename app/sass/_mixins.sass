@@ -1,0 +1,198 @@
+=xxl($name, $value)
+  @media screen and (max-width: $_xxl)
+    #{$name}: $value
+
+=xxl-block()
+  @media screen and (max-width: $_xxl)
+    @content
+
+=xl($name, $value)
+  @media screen and (max-width: $_xl)
+    #{$name}: $value
+
+=xl-block()
+  @media screen and (max-width: $_xl)
+    @content
+
+=lg($name, $value)
+  @media screen and (max-width: $_lg)
+    #{$name}: $value
+
+=lg-block()
+  @media screen and (max-width: $_lg)
+    @content  
+
+=md($name, $value)
+  @media screen and (max-width: $_md)
+    #{$name}: $value
+
+=md-block()
+  @media screen and (max-width: $_md)
+    @content
+
+=sm($name, $value)
+  @media screen and (max-width: $_sm)
+    #{$name}: $value
+
+=sm-block()
+  @media screen and (max-width: $_sm)
+    @content
+
+=xs($name, $value)
+  @media screen and (max-width: $_xs)
+    #{$name}: $value
+
+=xs-block()
+  @media screen and (max-width: $_xs)
+    @content
+
+
+=lg-m($name, $value)
+  @media screen and (min-width: $_lg)
+    #{$name}: $value
+
+=lg-block-m()
+  @media screen and (min-width: $_lg)
+    @content  
+
+=md-m($name, $value)
+  @media screen and (min-width: $_md)
+    #{$name}: $value
+
+=md-block-m()
+  @media screen and (min-width: $_md)
+    @content
+
+=sm-m($name, $value)
+  @media screen and (min-width: $_sm)
+    #{$name}: $value
+
+=sm-block-m()
+  @media screen and (min-width: $_sm)
+    @content
+
+=xs-m($name, $value)
+  @media screen and (min-width: $_xs)
+    #{$name}: $value
+
+=xs-block-m()
+  @media screen and (min-width: $_xs)
+    @content
+
+
+=_media()
+  ._media
+    height: 21px
+    position: fixed
+    width: 100%
+    text-align: center
+    background-color: black
+    +lg(background-color,red)
+    +md(background-color,orange)
+    +sm(background-color,yellow)
+    +xs(background-color,lime)
+    i
+        display: inline-block
+        margin: 0 20px
+        font-style: normal
+        &::before
+            color: #000
+            padding: 2px 5px
+            font-weight: bold
+        &:nth-of-type(1)::before
+            content: 'xs'
+            background: lime
+        &:nth-of-type(2)::before
+            content: 'sm'
+            background: yellow
+        &:nth-of-type(3)::before
+            content: 'md'
+            background: orange
+        &:nth-of-type(4)::before
+            content: 'lg'
+            background: red
+
+
+=lines()
+  body
+    &:before
+      content: ''
+      display: block
+      width: 1px
+      position: fixed
+      background-color: red
+      left: 50%
+      height: 100%
+  .debuger-lines
+    position: relative
+    &:before,
+    &:after
+      content: ''
+      width: 1px
+      height: var(--body-height)
+      display: block
+      position: absolute
+      background-color: green
+    &:after
+      right: 0
+
+
+=lines-all()
+  *
+    position: relative
+    &:before
+      content: ''
+      display: block
+      width: 1px
+      position: absolute
+      background-color: red
+      left: 50%
+      height: 100%
+
+
+=window-size()
+  .debuger-size
+    left: 0
+    right: 0
+    background-color: rgb(255, 198, 0)
+    height: 40px
+    width: 100%
+    bottom: 0
+    position: fixed
+    cursor: pointer
+    .debuger-size-inner
+      height: 100%
+      display: flex
+      justify-content: center
+      justify-content: space-between
+      align-items: center
+      span
+        padding: 0 10px
+        font-size: 30px
+      i
+        height: 2px
+        position: relative
+        font-size: 0
+        display: inline-block
+        vertical-align: super
+        width: 100%
+        margin-right: 12px
+        background-color: #000
+        margin: 0
+        &:before
+          content: ''
+          position: absolute
+          border-style: solid
+          color: inherit
+          border-width: 0 2px 2px 0
+          display: inline-block
+          padding: 5px
+        &:first-of-type:before
+          left: 0
+          right: initial
+          transform: rotate(135deg) translate(-5px, 2px)  
+        &:last-of-type:before
+          right: 0
+          left: initial
+          transform: rotate(-45deg) translate(2px, -5px)
+          

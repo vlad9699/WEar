@@ -1,0 +1,28 @@
+<section class="feedback @@bg --pright">
+    <div class="feedback__inner container">
+        <h2 class="title feedback__title" data-title="Обратная связь">Обратная связь</h2>
+        <form action="" class="feedback__form">
+            <label class="feedback__label">
+                <p class="feedback__highlight">Имя:</p>
+                <input class="feedback__field" type="text"  placeholder="Введите свое имя, отчество" required>
+                <span class="feedback__bar"></span>
+            </label>
+            <label class="feedback__label">
+                <p class="feedback__highlight">Номер телефона:</p>
+                <input class="feedback__field" type="tel"  placeholder="Введите свой номер" required>
+                <span class="feedback__bar"></span>
+            </label>
+            <label class="feedback__label">
+                <p class="feedback__highlight">E-mail:</p>
+                <input class="feedback__field" type="email" placeholder="Введите свою почту">
+                <span class="feedback__bar"></span>
+            </label>
+            <label class="feedback__label feedback__label--textarea">
+                <p class="feedback__highlight">Сообщение:</p>
+                <textarea class="feedback__field" placeholder="Введите текст" onkeyup="autoHeight(this)"></textarea>
+                <span class="feedback__bar"></span>
+            </label>
+            <button type="submit" class="btn btn--primary feedback__btn">Отправить</button>
+        </form>
+    </div>
+</section>

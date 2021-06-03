@@ -1,0 +1,288 @@
+\:root
+	--main-color: #000000
+	--lblue: #CFDDE2
+	--main-font: 'Raleway', sans-serif
+	--background: #fff
+*
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+	&:before,
+	&:after
+		box-sizing: border-box
+\:focus
+	outline: none
+
+\::placeholder
+	opacity: 1
+	color: #000
+	transition: 0.4s transform, 0.4s opacity
+
+\::-moz-selection
+	background: var(--main-color)
+	color: #fff
+
+\::selection
+	background: var(--main-color)
+	color: #fff
+
+\::-webkit-scrollbar
+	width: 6px
+	height: 6px
+
+\::-webkit-scrollbar-thumb
+	background-color: var(--main-color)
+	border-radius: 3px
+
+
+html, body
+	height: 100%
+
+body
+	position: relative
+	min-width: 320px
+	max-width: 1920px
+	margin: 0 auto
+	font-size: 18px
+	line-height: 1.65
+	color: var(--main-color)
+	font-family: var(--main-font)
+	font-weight: 400
+	overflow-x: hidden
+	+sm(font-size, 14px)
+	// &::before
+	// 	content: ""
+	// 	position: fixed
+	// 	z-index: 222
+	// 	left: 50%
+	// 	height: 100%
+	// 	width: 1px
+	// 	background: red
+
+a, button
+	background: transparent
+	text-decoration: none
+	cursor: pointer
+	color: var(--main-color)
+	outline: none
+	border: none
+img
+	max-width: 100%
+	display: block
+	height: auto
+
+strong, b
+	color: #000
+	font-weight: 500
+
+ul
+	list-style: none
+
+input,
+textarea,
+select
+	background: transparent
+	width: 100%
+	display: block
+	padding: 5px 0
+	font-size: 16px
+	font-family: var(--main-font)
+	font-weight: 400
+	line-height: normal
+	border: none
+	outline: none
+	color: #525252
+	&::placeholder
+		color: var(--lblue)
+		opacity: 1
+textarea
+	resize: vertical
+	max-height: 200px
+	min-height: 32px
+	height: 32px
+
+input[type='radio'],
+input[type='checkbox'],
+select
+	-webkit-appearance: none
+	-moz-appearance: none
+	appearance: none
+	border-radius: 0
+	cursor: pointer
+
+select
+	background: url('../img/arrow-down.svg') no-repeat right 10px center/15px
+	padding-right: 30px
+
+input
+	&:focus::placeholder
+		transform: translateX(9px)
+		opacity: 0
+
+	&[type='checkbox'],
+	&[type='radio']
+		background: #fff
+		position: relative
+		width: 16px
+		height: 16px
+		border: none
+		padding: 0
+		cursor: pointer
+		width: 18px
+		height: 18px
+		border: 2px solid #000
+		transition: 0.2s
+
+	&[type='checkbox']
+		border-radius: 2px
+		&::before
+			content: ""
+			position: absolute
+			top: 0
+			left: 4px
+			width: 6px
+			height: 12px
+			border: 2px solid #fff
+			border-top-width: 0
+			border-left-width: 0
+			transform: rotate(45deg) scale(0)
+			transition: 0.2s
+		&:checked
+			background-color: var(--main-color)
+			border-color: var(--main-color)
+			&::before
+				transform: rotate(45deg) scale(1)
+
+	&[type='radio']
+		border-radius: 50%
+		&::before
+			content: ""
+			background-color: var(--main-color)
+			position: absolute
+			top: 3px
+			left: 3px
+			border: none
+			width: 8px
+			height: 8px
+			border-radius: inherit
+			transform: scale(0)
+			transition: 0.2s
+		&:checked
+			border-color: var(--main-color)
+			background-color: #fff
+			&::before
+				transform: scale(1)
+
+.invisible
+	visibility: hidden
+	opacity: 0
+.hidden
+	overflow: hidden
+
+.container
+	width: 100%
+	max-width: 1260px
+	padding: 0 15px
+	margin: 0 auto
+	// border-left: 1px solid red
+	// border-right: 1px solid red
+.title
+	font-size: 44px
+	font-weight: 700
+	color: var(--main-color)
+	line-height: 60px
+
+.btn
+	display: flex
+	justify-content: center
+	align-items: center
+	text-align: center
+	width: 190px
+	height: 64px
+	background: rgba(255, 255, 255, 0.75)
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+	backdrop-filter: blur(4px)
+	font-size: 16px
+	font-weight: 700
+	margin-left: 30px
+
+.red
+	color: #FB3E1E
+
+.slider__inner
+	position: relative
+	.slick-slide
+		height: 590px
+	.slick-dots
+		position: absolute
+		top: 50%
+		right: 2%
+		transform: translate(-50%, -50%)
+		li
+			padding: 5px 0
+			cursor: pointer
+			button
+				font-size: 0
+				display: block
+				width: 0px
+				height: 25px
+				border: 2px solid #fff
+				background-color: #fff
+				transition: 0.3s all
+			&.slick-active
+				button
+					border-color: #FB3E1E
+					background: #FB3E1E
+
+.category__slider
+	.slick-slide
+		margin: 0 15px
+	.slick-arrow
+		position: absolute
+		top: 0
+		display: flex
+		justify-content: center
+		align-items: center
+		z-index: 2
+		font-size: 0
+		width: 50px
+		height: 100%
+		transform: scaleX(0.6)
+		&::before
+			content: ""
+			border: solid #F0F0F0
+			border-width: 0 4px 4px 0
+			display: inline-block
+			padding: 10px
+	.slick-prev
+		left: -15px
+		transform-origin: left
+		&::before
+			transform: rotate(135deg)
+			margin-right: -10px
+	.slick-next
+		right: -15px
+		transform-origin: right
+		&::before
+			transform: rotate(-45deg)
+			margin-left: -10px
+	// .slick-list
+	// 	margin-bottom: 70px
+	.slick-dots
+		display: flex
+		li
+			padding: 5px 0
+			cursor: pointer
+			// background-color: #F0F0F0
+			button
+				font-size: 0
+				display: block
+				width: 420px
+				height: 0px
+				border: 2px solid #F0F0F0
+				background-color: #F0F0F0
+				transition: 0.3s all
+			&.slick-active
+				button
+					border-color: #FB3E1E
+					background: #FB3E1E
